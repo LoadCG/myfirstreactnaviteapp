@@ -36,8 +36,7 @@ export const Home = () => {
     <FlatList
       data={MOVIESWATCHING}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => <MoviesCard movieURL={item.moviesURL}/>}
-    />
+      renderItem={({ item }) => <MoviesCard movieURL={item.moviesURL}/>}/>
   </View>
 
 }

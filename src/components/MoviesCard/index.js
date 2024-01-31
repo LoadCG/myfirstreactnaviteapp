@@ -5,13 +5,8 @@ import DarkKnight from "../../components/assets/movies/dark-knight.png"
 export const MoviesCard = () => {
   return(
     <View>
-      <View>
       <Text style={styles.titleText}>Continuar Assistindo</Text>
-        <Image style={styles.img} source={DarkKnight}/>
-      </View>
-      <View>
-        <Text style={styles.titleText}>Filmes recomendados</Text>
-      </View>
+      <Image style={styles.img} source={DarkKnight}/>
     </View>
   )
 }
