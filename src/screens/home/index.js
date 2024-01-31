@@ -1,55 +1,64 @@
-import { TouchableOpacity, StyleSheet, Text, View } from "react-native"
-import PrimeVideoLogo from "../../components/assets/prime_video.png";
-import AmazonLogo from "../../components/assets/amazon_logo.png";
-import MovieTheWhell from "../../components/assets/movies/whell_of_time.png";
+import { Image, TouchableOpacity, StyleSheet, Text, View, FlatList } from "react-native"
+import { MoviesCard } from "../../components/MoviesCard";
+import { MOVIESWATCHING } from "../../components/utils/moviesWatching";
+//import PrimeVideoLogo from "../../components/assets/prime_video.png";
+//import AmazonLogo from "../../components/assets/amazon_logo.png";
+import AmazonLogo from "../../components/assets/Amazon_Prime_Video_logo.svg.png"
+import MovieTheWhell from "../../components/assets/movies/wheel_of_time1.webp";
+
 
 export const Home = () => {
   return <View style={styles.container}>
     <View style={styles.header}>
 
-      <Image style={styles.primeLogoImg} source={PrimeVideoLogo} />
       <Image style={styles.amazonLogoImg} source={AmazonLogo} />
 
     </View>
     <View style={styles.category}>
       <TouchableOpacity>
-        <Text style={styles.categoryText}>Home</Text>
+        <Text style={styles.categoryText}>Página Inicial</Text>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Text style={styles.categoryText}>TV Shows</Text>
+        <Text style={styles.categoryText}>Séries</Text>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Text style={styles.categoryText}>Movies</Text>
+        <Text style={styles.categoryText}>Filmes</Text>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Text style={styles.categoryText}>Kids</Text>
+        <Text style={styles.categoryText}>Infantil</Text>
       </TouchableOpacity>
     </View>
 
-    <TouchableOpacity style={MovieImageThumbnail}>
-      <Image  source={MovieTheWhell} style={MovieImage}/>
+    <TouchableOpacity style={styles.MovieImageThumbnail}>
+      <Image  source={MovieTheWhell} style={styles.MovieImage}/>
     </TouchableOpacity>
-
+    
+    <FlatList
+      data={MOVIESWATCHING}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => <MoviesCard movieURL={item.moviesURL}/>}
+    />
   </View>
+
 }
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#232F3E",
+    backgroundColor: "#0E171E",
   },
 
   header: {
     width: "100%",
     paddingTop: 80,
-    alignItems: center,
-    justifyContent: center,
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   amazonLogoImg: {
-    marginTop: -32,
-    marginLeft: 30,
+    width: 160,
+    height: 49,
   },
 
   category: {
@@ -68,5 +77,19 @@ const styles = StyleSheet.create({
   MovieImageThumbnail: {
     width: "100%",
     alignItems: "center",
+    height: "maxContent",
   },
+
+  MovieImage: {
+    width: "100%",
+    height: 200,
+  },
+
+  titleText: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#ffffff",
+    marginTop: 15,
+    marginLeft: 30,
+  }
 });
