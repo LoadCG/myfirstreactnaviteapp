@@ -1,6 +1,7 @@
 import { TouchableOpacity, StyleSheet, Text, View } from "react-native"
 import PrimeVideoLogo from "../../components/assets/prime_video.png";
 import AmazonLogo from "../../components/assets/amazon_logo.png";
+import MovieTheWhell from "../../components/assets/movies/whell_of_time.png";
 
 export const Home = () => {
   return <View style={styles.container}>
@@ -24,6 +25,11 @@ export const Home = () => {
         <Text style={styles.categoryText}>Kids</Text>
       </TouchableOpacity>
     </View>
+
+    <TouchableOpacity style={MovieImageThumbnail}>
+      <Image  source={MovieTheWhell} style={MovieImage}/>
+    </TouchableOpacity>
+
   </View>
 }
 
@@ -31,7 +37,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#232F3E"
+    backgroundColor: "#232F3E",
   },
 
   header: {
@@ -57,5 +63,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     color: "#ffffff",
+  },
+
+  MovieImageThumbnail: {
+    width: "100%",
+    alignItems: "center",
   },
 });
