@@ -1,15 +1,12 @@
-import { FlatList ,Image, TouchableOpacity, StyleSheet, Text, View } from "react-native"
-import DarkKnight from "../../components/assets/movies/dark-knight.png"
+import { FlatList ,Image, TouchableOpacity, StyleSheet, Text, View } from "react-native";
+import { English } from "../../components/assets/movies/English.png";
 import { MOVIESWATCHING } from "../../components/utils/moviesWatching";
 
-
-
-export const MoviesCard = () => {
+export const Sugestions = () => {
   return(
     <View>
-      <Text style={styles.titleText}>Continuar Assistindo</Text>
-      <Image style={styles.img} source={DarkKnight}/>
-      
+      <Text style={styles.titleText}>Assista em outros idiomas</Text>
+      <Image style={styles.img} source={English}/>
     </View>
     
 

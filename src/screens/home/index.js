@@ -1,5 +1,6 @@
 import { Image, TouchableOpacity, StyleSheet, Text, View, FlatList } from "react-native"
 import { MoviesCard } from "../../components/MoviesCard";
+import { Sugestions } from "../../components/Sugestions"
 import { MOVIESWATCHING } from "../../components/utils/moviesWatching";
 //import PrimeVideoLogo from "../../components/assets/prime_video.png";
 //import AmazonLogo from "../../components/assets/amazon_logo.png";
@@ -33,10 +34,8 @@ export const Home = () => {
       <Image  source={MovieTheWhell} style={styles.MovieImage}/>
     </TouchableOpacity>
     
-    <FlatList
-      data={MOVIESWATCHING}
-      keyExtractor={(item) => item.id}
-      renderItem={({ item }) => <MoviesCard movieURL={item.moviesURL}/>}/>
+    <MoviesCard></MoviesCard>
+    <Sugestions></Sugestions>
   </View>
 
 }
